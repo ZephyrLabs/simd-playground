@@ -40,5 +40,7 @@ tensor_mul: x86/avx/tensor/avx_mul.cpp
 	./build/a.out
 	rm ./build/a.out
 
+all: vec_add vec_sub vec_mul vec_div tensor_add tensor_sub tensor_mul
+
 clean:
 	rm -rf /build

@@ -75,6 +75,8 @@ int main(){
     avx_div(a, b, c); 
     auto sp2 = chrono::high_resolution_clock::now();
 
+    cout << "-------------------AVX-VECTOR-DIV------------------" << endl;
+
     auto d1 = chrono::duration_cast<std::chrono::microseconds>(sp1 - st1);
  
     cout << "Time taken by normal function: "
@@ -90,5 +92,7 @@ int main(){
     cout << "Speed Uplift: "
         << percent << " %" << endl;
         
+    cout << "---------------------------------------------------" << endl;
+    
     return(0);
 }

@@ -158,8 +158,10 @@ int main(){
     avx_mul(a, b, d); 
     auto sp2 = chrono::high_resolution_clock::now();
 
+    cout << "-------------------AVX-TENSOR-MUL------------------" << endl;
+
     auto d1 = chrono::duration_cast<std::chrono::nanoseconds>(sp1 - st1);
- 
+     
     cout << "Time taken by normal function: "
          << d1.count() << " nanoseconds" << endl;
 
@@ -172,6 +174,8 @@ int main(){
 
     cout << "Speed Uplift: "
         << percent << " %" << endl;
+
+    cout << "---------------------------------------------------" << endl;
 
     return(0);
 }

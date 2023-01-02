@@ -29,9 +29,10 @@ setup up the compile environment with:
 git clone https://github.com/ZephyrLabs/simd-playground
 cd simd-playground
 make init
+make -s all
 ```
 
-run any of the examples with:
+run an example with:
 ```
 make <example name>
 ```
@@ -46,3 +47,41 @@ Under AVX:
 - tensor_add
 - tensor_sub
 - tensor_mul
+
+### Test Results:
+```
+-------------------AVX-VECTOR-ADD------------------
+Time taken by normal function: 5769 microseconds
+Time taken by AVX function: 3370 microseconds
+Speed Uplift: 171.187 %
+---------------------------------------------------
+-------------------AVX-TENSOR-SUB------------------
+Time taken by normal function: 6238 microseconds
+Time taken by AVX function: 3504 microseconds
+Speed Uplift: 178.025 %
+---------------------------------------------------
+-------------------AVX-TENSOR-MUL------------------
+Time taken by normal function: 5803 microseconds
+Time taken by AVX function: 3404 microseconds
+Speed Uplift: 170.476 %
+---------------------------------------------------
+-------------------AVX-VECTOR-DIV------------------
+Time taken by normal function: 5766 microseconds
+Time taken by AVX function: 3384 microseconds
+Speed Uplift: 170.39 %
+---------------------------------------------------
+-------------------AVX-TENSOR-ADD------------------
+Time taken by normal function: 151 nanoseconds
+Time taken by AVX function: 74 nanoseconds
+Speed Uplift: 204.054 %
+---------------------------------------------------
+-------------------AVX-TENSOR-SUB------------------
+Time taken by normal function: 142 nanoseconds
+Time taken by AVX function: 84 nanoseconds
+Speed Uplift: 169.048 %
+-------------------AVX-TENSOR-MUL------------------
+Time taken by normal function: 321 nanoseconds
+Time taken by AVX function: 112 nanoseconds
+Speed Uplift: 286.607 %
+---------------------------------------------------
+```

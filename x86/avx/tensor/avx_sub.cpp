@@ -79,6 +79,8 @@ int main(){
     avx_sub(a, b, c); 
     auto sp2 = chrono::high_resolution_clock::now();
 
+    cout << "-------------------AVX-TENSOR-SUB------------------" << endl;
+
     auto d1 = chrono::duration_cast<std::chrono::nanoseconds>(sp1 - st1);
  
     cout << "Time taken by normal function: "
