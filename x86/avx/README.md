@@ -16,6 +16,3 @@ Function list:
     - subtract
     - multiply
 
-* Tensor Manipulation:
-    - transposing
-    - inverse
