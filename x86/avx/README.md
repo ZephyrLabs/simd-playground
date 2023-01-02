@@ -1,7 +1,7 @@
-# SIMD library with AVX2
+# SIMD library with AVX
 
 This library has various prototypes and function implmentations for doing vector operations 
-using the AVX2 intrinsics in the **immintrin.h** library.
+using the AVX/AVX2 intrinsics in the **immintrin.h** library.
 
 Function list:
 
@@ -10,13 +10,12 @@ Function list:
     - subtract
     - multiply
     - divide
-    - square root
 
-* Matrix Artithmetic:
+* Tensor Artithmetic:
     - add
     - subtract
     - multiply
 
-* Matrix Manipulation:
+* Tensor Manipulation:
     - transposing
     - inverse
