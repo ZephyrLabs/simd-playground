@@ -35,6 +35,7 @@ run any of the examples with:
 ```
 make <example name>
 ```
+example: `make vec_add`
 
 ### Examples:
 Under AVX:
