@@ -89,8 +89,7 @@ int main(){
     cout << "Time taken by AVX function: "
          << d2.count() << " nanoseconds" << endl;
 
-    const float diff = d1.count() - d2.count();
-    float percent = diff/(float)d1.count() * 100;
+    const float percent = (float)d1.count()/(float)d2.count() * 100;
 
     cout << "Speed Uplift: "
         << percent << " %" << endl;
