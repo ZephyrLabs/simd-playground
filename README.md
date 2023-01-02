@@ -22,3 +22,26 @@ bit wide operations) but may also use AVX (128 bit wide operations)
 
 ### ARMv8
 * For the Arm implmentation it will be using **NEON** instructions.
+
+## Testing:
+setup up the compile environment with:
+```
+git clone https://github.com/ZephyrLabs/simd-playground
+cd simd-playground
+make init
+```
+
+run any of the examples with:
+```
+make <example name>
+```
+
+### Examples:
+Under AVX:
+- vec_add
+- vec_sub
+- vec_mul
+- vec_div
+- tensor_add
+- tensor_sub
+- tensor_mul
