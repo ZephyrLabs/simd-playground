@@ -38,6 +38,10 @@ make <example name>
 ```
 example: `make vec_add`
 
+**note:** you will need to specify the correct arch makefile with: 
+> -f avx-Makefile/neon-Makefile
+accordingly.
+
 ### Examples:
 Under AVX:
 - vec_add

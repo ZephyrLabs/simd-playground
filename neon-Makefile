@@ -1,0 +1,46 @@
+CXX=g++
+CXXFLAGS=-O
+
+init:
+	mkdir build
+	cd build
+
+vec_add: arm64/neon/vector/neon_add.cpp
+	$(CXX) $(CXXFLAGS) arm64/neon/vector/neon_add.cpp -o build/a.out
+	./build/a.out
+	rm ./build/a.out
+
+vec_sub: arm64/neon/vector/neon_sub.cpp
+	$(CXX) $(CXXFLAGS) arm64/neon/vector/neon_sub.cpp -o build/a.out
+	./build/a.out
+	rm ./build/a.out
+
+vec_mul: arm64/neon/vector/neon_mul.cpp
+	$(CXX) $(CXXFLAGS) arm64/neon/vector/neon_mul.cpp -o build/a.out
+	./build/a.out
+	rm ./build/a.out
+
+vec_div: arm64/neon/vector/neon_div.cpp
+	$(CXX) $(CXXFLAGS) arm64/neon/vector/neon_div.cpp -o build/a.out
+	./build/a.out
+	rm ./build/a.out
+
+tensor_add: arm64/neon/tensor/neon_add.cpp
+	$(CXX) $(CXXFLAGS) arm64/neon/tensor/neon_add.cpp -o build/a.out
+	./build/a.out
+	rm ./build/a.out
+
+tensor_sub: arm64/neon/tensor/neon_sub.cpp
+	$(CXX) $(CXXFLAGS) arm64/neon/tensor/neon_sub.cpp -o build/a.out
+	./build/a.out
+	rm ./build/a.out
+
+tensor_mul: arm64/neon/tensor/neon_mul.cpp
+	$(CXX) $(CXXFLAGS) arm64/neon/tensor/neon_mul.cpp -o build/a.out
+	./build/a.out
+	rm ./build/a.out
+
+all: vec_add vec_sub vec_mul vec_div tensor_add tensor_sub tensor_mul
+
+clean:
+	rm -rf /build
