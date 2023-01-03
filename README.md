@@ -43,7 +43,6 @@ example: `make vec_add`
 accordingly.
 
 ### Examples:
-Under AVX:
 - vec_add
 - vec_sub
 - vec_mul
