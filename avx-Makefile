@@ -41,7 +41,7 @@ tensor_mul: x86/avx/tensor/avx_mul.cpp
 	rm ./build/a.out
 
 convolution: x86/avx/tensor/avx_mul.cpp
-	$(CXX) $(CXXFLAGS) x86/avx/convolution/convolution.cpp -o build/a.out
+	$(CXX) $(CXXFLAGS) x86/avx/convolution/avx_conv.cpp -o build/a.out
 	./build/a.out
 	rm ./build/a.out
 
