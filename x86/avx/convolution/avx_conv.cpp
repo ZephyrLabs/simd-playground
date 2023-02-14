@@ -89,8 +89,8 @@ void avx_conv(const vector<float> x, const vector<float> h, vector<float>& y){
 }
 
 int main(){
-    const vector<float> a = {1.0f, 2.0f, 3.0f, 4.0f, 1.0f, 2.0f, 3.0f, 4.0f, 1.0f, 2.0f, 3.0f, 4.0f};
-    const vector<float> b = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 2.0f, 3.0f, 4.0f};
+    const vector<float> a = {1.0f, 2.0f, 3.0f, 4.0f, 1.0f, 2.0f, 3.0f, 4.0f, 1.0f, 2.0f, 3.0f, 4.0f, 1.0f, 2.0f, 3.0f, 4.0f};
+    const vector<float> b = {1.0f, 2.0f, 3.0f, 4.0f};
     vector<float> c  = {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
     vector<float> d  = {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
 
@@ -107,10 +107,10 @@ int main(){
     cout << "------------------AVX-CONVOLUTION------------------" << endl;
 
     auto d1 = chrono::duration_cast<std::chrono::nanoseconds>(sp1 - st1);
-     
+
     cout << "Time taken by normal function: "
          << d1.count() << " nanoseconds" << endl;
-
+    
     auto d2 = chrono::duration_cast<std::chrono::nanoseconds>(sp2 - st2);
  
     cout << "Time taken by AVX function: "
