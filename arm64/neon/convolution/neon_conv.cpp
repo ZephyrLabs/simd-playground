@@ -82,6 +82,44 @@ void neon_conv(const vector<float> x, const vector<float> h, vector<float>& y){
     }
 }
 
+/* this part is to be tested on a ARMv8.2 and above platform, ignore for now
+
+void neon_conv_fp16(const vector<float> x, const vector<float> h, vector<float>& y){
+    const auto l1 = x.size();
+    const auto l2 = h.size();
+    const auto l = l1 + l2 - 1;
+
+    int i = 0;
+    float16x8_t a, b, c;
+
+    for(int n = 0; n < l; n++){
+        i = 0;
+        c = vmovq_n_f16(0.0f);
+        for(int k = 0 ;k < l1; k++){
+            if((n - k) >= 0 && (n - k) <= l2){  
+                a[i] = x[k];
+                b[i] = h[n - k];
+                i++;
+
+                if(i > 7){
+                    c = vmulq_f16(a, b);
+                    y[n] = c[0] + c[1] + c[2] + c[3] + c[4] + c[5] + c[6] + c[7];
+
+                    c = vmovq_n_f16(0.0f);
+                    i = 0;
+                }
+            }
+        }    
+        if (i != 0){ 
+            a[i] = 0;
+
+            c = vmulq_f16(a, b);
+            y[n] = c[0] + c[1] + c[2] + c[3] + c[4] + c[5] + c[6] + c[7];
+        }
+    }
+}
+*/
+
 int main(){
     const vector<float> a = {1.0f, 2.0f, 3.0f, 4.0f, 1.0f, 2.0f, 3.0f, 4.0f, 1.0f, 2.0f, 3.0f, 4.0f, 1.0f, 2.0f, 3.0f, 4.0f};
     const vector<float> b = {1.0f, 2.0f, 3.0f, 4.0f};
